@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuizMaster | Interactive Quiz</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Quiz<span>Master.</span></div>
+    <button id="themeToggle" class="theme-btn" type="button">🌙 Dark Mode</button>
+  </header>
+
+  <main class="container quiz-container">
+    <section class="welcome-section">
+      <span class="badge-text">CSC336 • WEB TECHNOLOGIES</span>
+      <h1>Test Your Knowledge</h1>
+      <p>Challenge yourself, track your progress, and discover how much you know!</p>
+    </section>
+
+    <section id="startScreen" class="quiz-card">
+      <div class="quiz-icon">🧠</div>
+      <h2>Ready to Begin?</h2>
+      <p>Answer 5 randomized multiple-choice questions before the timer runs out.</p>
+      <div class="info-grid">
+        <div class="info-box"><strong>05</strong><span>Questions</span></div>
+        <div class="info-box"><strong>60s</strong><span>Time Limit</span></div>
+        <div class="info-box"><strong>100%</strong><span>Focus</span></div>
+      </div>
+      <button id="startBtn" class="primary-btn" type="button">Start Quiz →</button>
+    </section>
+
+    <section id="quizScreen" class="quiz-card hidden">
+      <div class="quiz-top">
+        <span id="questionCounter">Question 1 of 5</span>
+        <div class="timer">⏱ <span id="timer">60</span>s</div>
+      </div>
+      <div id="progressBar" class="progress-segments" aria-label="Quiz progress">
+        <div class="segment"></div><div class="segment"></div><div class="segment"></div>
+        <div class="segment"></div><div class="segment"></div>
+      </div>
+      <h2 id="questionText">Question appears here</h2>
+      <div id="optionsContainer" class="options-container"></div>
+      <div id="feedback" class="feedback" aria-live="polite"></div>
+      <button id="nextBtn" class="primary-btn" type="button" disabled>Next Question →</button>
+    </section>
+
+    <section id="resultScreen" class="quiz-card hidden">
+      <div class="result-icon">🏆</div>
+      <h2>Quiz Completed!</h2>
+      <p id="resultMessage">Here is your final result.</p>
+      <div class="score-circle"><span id="scorePercentage">0%</span><small>YOUR SCORE</small></div>
+      <div class="result-stats">
+        <div><strong id="correctCount">0</strong><span>Correct</span></div>
+        <div><strong id="wrongCount">0</strong><span>Incorrect</span></div>
+        <div><strong id="finalScore">0/5</strong><span>Score</span></div>
+      </div>
+      <button id="downloadBtn" class="primary-btn" type="button">📄 Download PDF Result</button>
+      <button id="restartBtn" class="secondary-btn" type="button">↻ Try Again</button>
+    </section>
+
+    <footer><p>© 2026 QuizMaster | Built with HTML, CSS & JavaScript</p></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
